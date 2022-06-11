@@ -4,97 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music</title>
+    <title>Music Player</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 
-    <style>
-        #pause{
-            display: none;
-        }
-        #reset {
-            display: none;
-        }
-
-        #reset {
-            background-color: white;
-            color: black;
-        }
-
-        body{
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: rgb(35, 31, 43)
-        }
-
-        .container{
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgb(18,31,44);
-            padding: 10px;
-            border-radius: 20px;
-            border: 1px solid white;
-        }
-
-        .container img {
-            height: 200px;
-            width: 200px;
-            border-radius: 15px;
-        }
-
-        .container button {
-            cursor: pointer ;
-            margin-top: 10px;
-            width: 50%;
-            height: 30px;
-            border: none;
-            border-radius: 10px;
-            background-color: rgb(23, 111, 143);
-            color: white;
-            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        }
-
-        .container button:hover {
-            background-color: rgb(228, 99, 130)
-        }
-        
-    </style>
-
-    <audio src="/music.mp3"></audio>
     <div class="container">
-        <img src="/jb.jpeg" alt="">
+        <img id="imagem" src="/logo.png" alt="">
+        <video src="/videos/clipe.mp4"></video>
         <button id="play">Play</button>
         <button id="pause">Pause</button>
+        <button id="next">Next</button>
         <button id="reset">Reset</button>
     </div>
 
-    <script>
-        const buttonPlay = document.getElementById('play')
-        const buttonPause = document.getElementById('pause')
-        const buttonReset = document.getElementById('reset')
-        const audio = document.querySelector('audio')
-        
-        buttonPlay.addEventListener('click', ()=>{
-            audio.play()
-            buttonPause.style.display = 'block'
-            buttonReset.style.display = 'block'
-        })
-        buttonPause.addEventListener('click', ()=>{
-            audio.pause()
-            buttonPlay.innerHTML = "Continue"
-        })
-        buttonReset.addEventListener('click', ()=> {
-            audio.pause()
-            audio.currentTime = 0;
-            buttonPlay.innerHTML = "Play"
-            buttonReset.style.display = 'none'
-            buttonPause.style.display = 'none'
-        })
-        
-    </script>
-    
+    <script src="./script.js"></script>
 </body>
 </html>
